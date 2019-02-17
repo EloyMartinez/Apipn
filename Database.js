@@ -1,63 +1,56 @@
-import { throws } from "assert";
-
 class DataBase {
-
+    
     constructor() {
-
-    }
-
-    infoMag = [
-        {
-            MagId: 10323,
-            Nommag: "Ainc"
-        }
-    ]
-
-
-
-
-    clients = [
-        {
-            clientId: 123,
-            prenom: "Léo",
-            nom: "Rolland",
-            magasins: {
-                10232: {
-                    points: 0,
-                    achats: 2,
-                    date: "12/12/2018"
-                },
-
-
-                10233: {
-                    points: 0,
-                    achats: 0,
-                    date: "12/12/2018"
+        this.infoMag = [
+            {
+                MagId: 10323,
+                Nommag: "Ainc"
+            }
+        ]
+    
+        this.clients = [
+            {
+                clientId: 123,
+                prenom: "Léo",
+                nom: "Rolland",
+                magasins: {
+                    10232: {
+                        points: 0,
+                        achats: 2,
+                        date: "12/12/2018"
+                    },
+    
+    
+                    10233: {
+                        points: 0,
+                        achats: 0,
+                        date: "12/12/2018"
+                    }
+                }
+            },
+            {
+                clientId: 124,
+                prenom: "Eloy",
+                nom: "Martinez",
+                magasins: {
+                    10232: {
+                        points: 0,
+                        achats: 2,
+                        date: "12/12/2018",
+                        transactions: [
+    
+                        ]
+                    },
+                    12033: {
+                        points: 100,
+                        achats: 2,
+                        date: "12/12/2018"
+                    },
+    
                 }
             }
-        },
-        {
-            clientId: 124,
-            prenom: "Eloy",
-            nom: "Martinez",
-            magasins: {
-                10232: {
-                    points: 0,
-                    achats: 2,
-                    date: "12/12/2018",
-                    transactions: [
-
-                    ]
-                },
-                12033: {
-                    points: 100,
-                    achats: 2,
-                    date: "12/12/2018"
-                },
-
-            }
-        }
-    ]
+        ]
+    }
 
     /**
      * Génère un entier entre 0 et 1000000 possiblement déjà utilisé
@@ -114,15 +107,13 @@ class DataBase {
      */
     ajouterMagasin(Nomi) {
         let Id = generateId();
-        while (isIdMagTaken(newClientId)) {
+        while (isIdMagTaken(Id)) {
             Id = generateId();
 
         }
         //  On cree la magasin
-        mag = {
-            MagId=Id,
-            Nommag=Nomi
-        }
+        mag.MagId = Id
+        mag.Nomma = Nomi
         // On ajoute la magasin a la liste des magasins
         this.infoMag.push(mag)
         return mag
@@ -130,11 +121,11 @@ class DataBase {
 
     MagDejaAffecte(clientId, magasinId){
         const client = this.clients.find(client=>client.clientId==clientId)
-    if (!client.magasins.keys().includes(magasinId)) {
-        return false
-    }else{
-       return  true
-    }
+        if (!client.magasins.keys().includes(magasinId)) {
+            return false
+        }else{
+        return  true
+        }
     }
 
     CreerMagasinClient(clientId, magasinId) {
@@ -168,3 +159,5 @@ class DataBase {
     }
 
 }
+
+module.exports = DataBase
