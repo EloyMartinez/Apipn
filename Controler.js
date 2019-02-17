@@ -1,5 +1,5 @@
  //import { DataBase } from "./Database"
- var Database = require('./Database')
+ const DataBase = require('./Database') // Importation de la classe DataBase
 
  class Controler {
 
@@ -27,4 +27,4 @@
 
 
  }
- module.exports.Controler = Controler
+ module.exports = Controler
