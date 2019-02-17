@@ -1,0 +1,14 @@
+{
+  "name": "apipn",
+  "version": "0.0.1",
+  "description": "Api TIPE",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
