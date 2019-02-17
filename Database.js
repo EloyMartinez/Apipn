@@ -112,6 +112,7 @@ class DataBase {
 
         }
         //  On cree la magasin
+        let mag = {}
         mag.MagId = Id
         mag.Nomma = Nomi
         // On ajoute la magasin a la liste des magasins
