@@ -15,7 +15,7 @@ app.use(express.json());
 
 app.post('/ajoutePoints', function(request, response){
   console.log("requete POST /ajoutePoints reçue")
-  const a = JSON.parse(request.body);      // your JSON
+  const a = request.body;      // your JSON
    //response.send(request.body);    // echo the result back
  controler.ajoutePoints(a.idc, a.idm, a.points)
 

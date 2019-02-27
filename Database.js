@@ -122,7 +122,7 @@ class DataBase {
 
     MagDejaAffecte(clientId, magasinId){
         const client = this.clients.find(client=>client.clientId==clientId)
-        if (!client.magasins.keys().includes(magasinId)) {
+        if (!Object.keys(client.magasins).includes(magasinId)) {
             return false
         }else{
         return  true
@@ -131,7 +131,7 @@ class DataBase {
 
     CreerMagasinClient(clientId, magasinId) {
         const client = this.clients.find(client=>client.clientId==clientId)
-        if (!client.magasins.keys().includes(magasinId)) {
+        if (!Object.keys(client.magasins).includes(magasinId)) {
             const magasinData = {
                 magasinId: {
                     points: 0,
