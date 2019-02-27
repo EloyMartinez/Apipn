@@ -13,8 +13,6 @@ app.get('/getclient/:tagId', function (req, res) {
 
 app.use(express.json());
 
-app.get
-
 app.post('/ajoutePoints', function(request, response){
   console.log("requete POST /ajoutePoints reçue")
   const a = JSON.parse(request.body);      // your JSON
