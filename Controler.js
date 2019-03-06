@@ -13,7 +13,8 @@
         return this.db.getClient(idClient)
     }
 
-    ajoutePoints(idClient, idMagasin, amount) {
+    ajoutePoints(idClient, idMagasin2, amount) {
+      let idMagasin=idMagasin2.toString()
        if(this.db.MagDejaAffecte(idClient, idMagasin)){
         this.db.AffecterMagasinClient(idClient, idMagasin, amount)
        }else{

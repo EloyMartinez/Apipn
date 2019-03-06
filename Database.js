@@ -122,6 +122,8 @@ class DataBase {
 
     MagDejaAffecte(clientId, magasinId){
         const client = this.clients.find(client=>client.clientId==clientId)
+       // console.log(client)
+
         if (!Object.keys(client.magasins).includes(magasinId)) {
             return false
         }else{
@@ -133,31 +135,32 @@ class DataBase {
         const client = this.clients.find(client=>client.clientId==clientId)
         if (!Object.keys(client.magasins).includes(magasinId)) {
             const magasinData = {
-                magasinId: {
+                 
                     points: 0,
-                    transactions: []
+                    achats: 1,
+                    date: new Date()
                 }
-            }
-            client.magasins.push(magasinData)
-            console.log("Affectation du magasin " + magasinId + " au client " + client );
+            
+            //console.log(client.magasins);
+            //console.log(magasinId);
+            const mid= magasinId.toString();
+           (client.magasins)[mid] = magasinData
+           
+            console.log("Creation du magasin " + magasinId + " au client " + client );
         }
-        console.log("magasin déjà affectée")
+        //console.log("magasin déjà affectée")
     }
 
     AffecterMagasinClient(clientId, magasinId,p) {
         const client = this.clients.find(client=>client.clientId==clientId)
-        if (!client.magasins.keys().includes(magasinId)) {
-            const magasinData = {
-                magasinId: {
-                    points: points+ p,
-                    transactions: []
-                }
-            }
-            client.magasins.push(magasinData)
+       // console.log(client.magasins)
+        //console.log(typeof client.magasins);
+        const mag = (client.magasins)[magasinId.toString()]
+        mag.points+=p
+        console.log(client.magasins)
+
             console.log("Affectation du magasin " + magasinId + " au client " + client );
-        }
-        console.log("magasin déjà affectée")
-    }
+            }
 
     getClient(clientId){
         return this.clients.find((current)=>current.clientId==clientId)
