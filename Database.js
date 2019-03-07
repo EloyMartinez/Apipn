@@ -3,8 +3,12 @@ class DataBase {
     constructor() {
         this.infoMag = [
             {
-                MagId: 10323,
-                Nommag: "Ainc"
+                MagId: 10232,
+                Nommag: "Alinea"
+            },
+            {
+                MagId: 10233,
+                Nommag: "Mr.Bricolage"
             }
         ]
     
@@ -163,8 +167,23 @@ class DataBase {
             }
 
     getClient(clientId){
-        return this.clients.find((current)=>current.clientId==clientId)
-        
+        let clientData = this.clients.find((current)=>current.clientId==clientId)
+        // Si le client n'est pas trouvé, on renvoie rien
+        if (!clientData) {
+            return ""
+        }
+        // On ajoute le champ "nom" sur chaque magasin du client
+        // Pour chaque doublet "magEntry" (id du magasin, contenu d'objet)
+        Object.entries(clientData.magasins).forEach(magEntry=>{
+            // On cherche dans infoMag le nom du magasin correspondant
+            const magasinRecherche = this.infoMag.find(magasin=>magasin.MagId==magEntry[0])
+            // Si un magasin est trouvé
+            if (magasinRecherche) {
+                // On affecte le nom a la liste des magasins du client
+                clientData.magasins[magEntry[0]]["nom"] = magasinRecherche.Nommag
+            }
+        })
+        return clientData
     }
 
 }
