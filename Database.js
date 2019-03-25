@@ -18,7 +18,7 @@ class DataBase {
     
         this.clients = [
             {
-                clientId: 123,
+                clientId: "123",
                 prenom: "Léo",
                 nom: "Rolland",
                 magasins: {
@@ -37,7 +37,26 @@ class DataBase {
                 }
             },
             {
-                clientId: 2485148486649535054495649300,
+                clientId: "2485148486649535051536853300",
+                prenom: "Léo",
+                nom: "Rolland",
+                magasins: {
+                    10232: {
+                        points: 0,
+                        achats: 2,
+                        date: "12/12/2018"
+                    },
+    
+    
+                    10233: {
+                        points: 0,
+                        achats: 0,
+                        date: "12/12/2018"
+                    }
+                }
+            },
+            {
+                clientId: "2485148486649535054495649300",
                 prenom: "Eloy",
                 nom: "Martinez",
                 magasins: {
