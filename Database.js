@@ -21,6 +21,7 @@ class DataBase {
                 clientId: "2485148486649535051536853300",
                 prenom: "Léo",
                 nom: "Rolland",
+                email: "rolland.leo@orange.fr",
                 magasins: {
                     10232: {
                         points: 0,
@@ -40,6 +41,7 @@ class DataBase {
                 clientId: "2485148486649535054495649300",
                 prenom: "Eloy",
                 nom: "Martinez",
+                email: "eloy.martinez@gmail.com",
                 magasins: {
                     10232: {
                         points: 0,
@@ -49,7 +51,29 @@ class DataBase {
     
                         ]
                     },
-                    12033: {
+                    10233: {
+                        points: 100,
+                        achats: 2,
+                        date: "12/12/2018"
+                    },
+    
+                }
+            },
+            {
+                clientId: "2485148486649535054495649300",
+                prenom: "Alexis",
+                nom: "gaillard",
+                email: "alexis.gaillard@gmail.com",
+                magasins: {
+                    10232: {
+                        points: 0,
+                        achats: 2,
+                        date: "12/12/2018",
+                        transactions: [
+    
+                        ]
+                    },
+                    10233: {
                         points: 100,
                         achats: 2,
                         date: "12/12/2018"
